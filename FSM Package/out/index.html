@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>FSM test page</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div id="main-div">
+			<canvas id="FSM-main-canvas" width="1024" height="768"> 
+			</canvas>
+		</div>
+		<script type="module">
+			import {runTests} from "./test_cases.js";
+			console.log("running in index.html");
+			runTests();
+			console.log("runTests() returns to index.html")
+		</script>
+   </body>
+</html>

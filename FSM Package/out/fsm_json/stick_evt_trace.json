@@ -1,0 +1,44 @@
+{
+    "regions": [
+        { "name": "stick1_img", "x": 0, "y": 0, "w":-1, "h":-1},
+        { "name": "stick2_img", "x": 0, "y": 0, "w":-1, "h":-1},
+        { "name": "stick3_img", "x": 0, "y": 0, "w":-1, "h":-1},
+        { "name": "stick4_img", "x": 0, "y": 0, "w":-1, "h":-1},
+        { "name": "stickn_img", "x": 0, "y": 0, "w":-1, "h":-1},
+        { "name": "stickn_img", "x": 0, "y": 0, "w":-1, "h":-1, 
+          "imageLoc": "./images/stick_n.png"
+        },
+        { "name": "stick1_input", "x": 0, "y": 0, "w":200, "h":200},
+        { "name": "stick2_input", "x": 0, "y": 425, "w":200, "h":200},
+        { "name": "stick3_input", "x": 325, "y": 0, "w":200, "h":200},
+        { "name": "stick4_input", "x": 325, "y": 425, "w":200, "h":200},
+        { "name": "stickn_input", "x": 113, "y": 163, "w":300, "h":300}
+    ], 
+    "states":[
+        {
+            "name" : "only_state",
+            "transitions" : [
+                { "onEvent" : {"evtType" : "any", "region" : "stickn_input"},
+                  "target" : "only_state",
+                  "actions" : [ {"act": "print_event", "param": "evt-->"}]
+                },
+                { "onEvent" : {"evtType" : "any", "region" : "stick1_input"},
+                  "target" : "only_state",
+                  "actions" : [ {"act": "print_event",  "param": "evt-->"}]
+                },
+                { "onEvent" : {"evtType" : "any", "region" : "stick2_input"},
+                "target" : "only_state",
+                "actions" : [ {"act": "print_event", "param": "evt-->"}]
+                },
+                { "onEvent" : {"evtType" : "any", "region" : "stick3_input"},
+                  "target" : "only_state",
+                  "actions" : [ {"act": "print_event", "param": "evt-->"}]
+                },
+                { "onEvent" : {"evtType" : "any", "region" : "stick4_input"},
+                  "target" : "only_state",
+                  "actions" : [ {"act": "print_event", "param": "evt-->"}]
+                }
+            ]
+        }
+    ]
+}

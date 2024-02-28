@@ -1,0 +1,286 @@
+{
+    "regions": [
+        { "name": "stick1_img", "x": 0, "y": 0},
+        { "name": "stick2_img", "x": 0, "y": 0},
+        { "name": "stick3_img", "x": 0, "y": 0},
+        { "name": "stick4_img", "x": 0, "y": 0},
+        { "name": "stickn_img", "x": 0, "y": 0, "imageLoc": "./images/stick_n.png"},
+
+        { "name": "stick1", "x": 0, "y": 0, "w":262, "h":262},
+        { "name": "stick2", "x": 0, "y": 363, "w":262, "h":262},
+        { "name": "stick3", "x": 263, "y": 0, "w":262, "h":262},
+        { "name": "stick4", "x": 263, "y": 363, "w":262, "h":262},
+        { "name": "stickn", "x": 113, "y": 163, "w":300, "h":300}
+    ], 
+    "states":[
+        { "name" : "inactive_n",
+          "transitions" : [
+                { "onEvent" : {"evtType" : "press", "region" : "stickn"},
+                  "target" : "active_n"
+                }
+            ]
+        },
+
+        { "name" : "active_n",
+          "transitions" : [
+                { "onEvent": {"evtType": "release", "region": "stickn"},
+                "target": "inactive_n", 
+                "actions": [{"act": "print", "param": "== SHIFT TO N =="}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "stickn"},
+                "target": "inactive_n",
+                "actions": [{"act": "print", "param": "== SHIFT TO N =="}]
+                },
+
+                { "onEvent": {"evtType": "move_inside", "region": "stick1"},
+                  "target": "active_1",
+                  "actions": [
+                        {"act": "clear_image", "region": "stickn_img"},
+                        {"act": "set_image", "region": "stick1_img", "param": "./images/stick_1.png"}
+                  ]
+                },
+
+                { "onEvent": {"evtType": "move_inside", "region": "stick2"},
+                  "target": "active_2",
+                  "actions": [
+                        {"act": "clear_image", "region": "stickn_img"},
+                        {"act": "set_image", "region": "stick2_img", "param": "./images/stick_2.png"}
+                  ]
+                },
+                
+                { "onEvent": {"evtType": "move_inside", "region": "stick3"},
+                  "target": "active_3",
+                  "actions": [
+                        {"act": "clear_image", "region": "stickn_img"},
+                        {"act": "set_image", "region": "stick3_img", "param": "./images/stick_3.png"}
+                  ]
+                },
+                
+                { "onEvent": {"evtType": "move_inside", "region": "stick4"},
+                  "target": "active_4",
+                  "actions": [
+                        {"act": "clear_image", "region": "stickn_img"},
+                        {"act": "set_image", "region": "stick4_img", "param": "./images/stick_4.png"}
+                  ]
+                }
+            ]
+        },
+
+        { "name" : "inactive_1",
+        "transitions" : [
+              { "onEvent" : {"evtType" : "press", "region" : "stick1"},
+                "target" : "active_1"
+              }
+          ]
+        },
+
+        { "name" : "active_1",
+          "transitions" : [
+                { "onEvent": {"evtType": "release", "region": "stick1"},
+                "target": "inactive_1",
+                "actions": [{"act": "print", "param": "== SHIFT TO 1 =="}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "stick1"},
+                "target": "inactive_1",
+                "actions": [{"act": "print", "param": "== SHIFT TO 1 =="}]
+                },
+
+                { "onEvent": {"evtType": "move_inside", "region": "stickn"},
+                  "target": "active_n",
+                  "actions": [
+                        {"act": "clear_image", "region": "stick1_img"},
+                        {"act": "set_image", "region": "stickn_img", "param": "./images/stick_n.png"}
+                  ]
+                },
+
+                { "onEvent": {"evtType": "move_inside", "region": "stick2"},
+                  "target": "active_2",
+                  "actions": [
+                        {"act": "clear_image", "region": "stick1_img"},
+                        {"act": "set_image", "region": "stick2_img", "param": "./images/stick_2.png"}
+                  ]
+                },
+                
+                { "onEvent": {"evtType": "move_inside", "region": "stick3"},
+                  "target": "active_3",
+                  "actions": [
+                        {"act": "clear_image", "region": "stick1_img"},
+                        {"act": "set_image", "region": "stick3_img", "param": "./images/stick_3.png"}
+                  ]
+                },
+                
+                { "onEvent": {"evtType": "move_inside", "region": "stick4"},
+                  "target": "active_4",
+                  "actions": [
+                        {"act": "clear_image", "region": "stick1_img"},
+                        {"act": "set_image", "region": "stick4_img", "param": "./images/stick_4.png"}
+                  ]
+                }
+            ]
+        },
+
+        { "name" : "inactive_2",
+        "transitions" : [
+              { "onEvent" : {"evtType" : "press", "region" : "stick2"},
+                "target" : "active_2"
+              }
+          ]
+        },
+
+        { "name" : "active_2",
+          "transitions" : [
+                { "onEvent": {"evtType": "release", "region": "stick2"},
+                "target": "inactive_2",
+                "actions": [{"act": "print", "param": "== SHIFT TO 2 =="}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "stick2"},
+                "target": "inactive_2",
+                "actions": [{"act": "print", "param": "== SHIFT TO 2 =="}]
+                },
+
+                { "onEvent": {"evtType": "move_inside", "region": "stickn"},
+                  "target": "active_n",
+                  "actions": [
+                        {"act": "clear_image", "region": "stick2_img"},
+                        {"act": "set_image", "region": "stickn_img", "param": "./images/stick_n.png"}
+                  ]
+                },
+
+                { "onEvent": {"evtType": "move_inside", "region": "stick1"},
+                  "target": "active_1",
+                  "actions": [
+                        {"act": "clear_image", "region": "stick2_img"},
+                        {"act": "set_image", "region": "stick1_img", "param": "./images/stick_1.png"}
+                  ]
+                },
+                
+                { "onEvent": {"evtType": "move_inside", "region": "stick3"},
+                  "target": "active_3",
+                  "actions": [
+                        {"act": "clear_image", "region": "stick2_img"},
+                        {"act": "set_image", "region": "stick3_img", "param": "./images/stick_3.png"}
+                  ]
+                },
+                
+                { "onEvent": {"evtType": "move_inside", "region": "stick4"},
+                  "target": "active_4",
+                  "actions": [
+                        {"act": "clear_image", "region": "stick2_img"},
+                        {"act": "set_image", "region": "stick4_img", "param": "./images/stick_4.png"}
+                  ]
+                }
+            ]
+        },
+
+        { "name" : "inactive_3",
+        "transitions" : [
+              { "onEvent" : {"evtType" : "press", "region" : "stick3"},
+                "target" : "active_3"
+              }
+          ]
+        },
+
+        { "name" : "active_3",
+          "transitions" : [
+                { "onEvent": {"evtType": "release", "region": "stick3"},
+                "target": "inactive_3",
+                "actions": [{"act": "print", "param": "== SHIFT TO 3 =="}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "stick3"},
+                "target": "inactive_3",
+                "actions": [{"act": "print", "param": "== SHIFT TO 3 =="}]
+                },
+
+                { "onEvent": {"evtType": "move_inside", "region": "stickn"},
+                  "target": "active_n",
+                  "actions": [
+                        {"act": "clear_image", "region": "stick3_img"},
+                        {"act": "set_image", "region": "stickn_img", "param": "./images/stick_n.png"}
+                  ]
+                },
+
+                { "onEvent": {"evtType": "move_inside", "region": "stick1"},
+                  "target": "active_1",
+                  "actions": [
+                        {"act": "clear_image", "region": "stick3_img"},
+                        {"act": "set_image", "region": "stick1_img", "param": "./images/stick_1.png"}
+                  ]
+                },
+                
+                { "onEvent": {"evtType": "move_inside", "region": "stick2"},
+                  "target": "active_2",
+                  "actions": [
+                        {"act": "clear_image", "region": "stick3_img"},
+                        {"act": "set_image", "region": "stick2_img", "param": "./images/stick_2.png"}
+                  ]
+                },
+                
+                { "onEvent": {"evtType": "move_inside", "region": "stick4"},
+                  "target": "active_4",
+                  "actions": [
+                        {"act": "clear_image", "region": "stick3_img"},
+                        {"act": "set_image", "region": "stick4_img", "param": "./images/stick_4.png"}
+                  ]
+                }
+            ]
+        },
+        
+        { "name" : "inactive_4",
+        "transitions" : [
+              { "onEvent" : {"evtType" : "press", "region" : "stick4"},
+                "target" : "active_4"
+              }
+          ]
+        },
+
+        { "name" : "active_4",
+          "transitions" : [
+                { "onEvent": {"evtType": "release", "region": "stick4"},
+                "target": "inactive_4",
+                "actions": [{"act": "print", "param": "== SHIFT TO 4 =="}]
+                },
+
+                { "onEvent": {"evtType": "release_none", "region": "stick4"},
+                "target": "inactive_4",
+                "actions": [{"act": "print", "param": "== SHIFT TO 4 =="}]
+                },
+
+                { "onEvent": {"evtType": "move_inside", "region": "stickn"},
+                  "target": "active_n",
+                  "actions": [
+                        {"act": "clear_image", "region": "stick4_img"},
+                        {"act": "set_image", "region": "stickn_img", "param": "./images/stick_n.png"}
+                  ]
+                },
+
+                { "onEvent": {"evtType": "move_inside", "region": "stick1"},
+                  "target": "active_1",
+                  "actions": [
+                        {"act": "clear_image", "region": "stick4_img"},
+                        {"act": "set_image", "region": "stick1_img", "param": "./images/stick_1.png"}
+                  ]
+                },
+                
+                { "onEvent": {"evtType": "move_inside", "region": "stick2"},
+                  "target": "active_2",
+                  "actions": [
+                        {"act": "clear_image", "region": "stick4_img"},
+                        {"act": "set_image", "region": "stick2_img", "param": "./images/stick_2.png"}
+                  ]
+                },
+                
+                { "onEvent": {"evtType": "move_inside", "region": "stick3"},
+                  "target": "active_3",
+                  "actions": [
+                        {"act": "clear_image", "region": "stick4_img"},
+                        {"act": "set_image", "region": "stick3_img", "param": "./images/stick_3.png"}
+                  ]
+                }
+            ]
+        }
+    ]
+}

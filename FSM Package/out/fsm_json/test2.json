@@ -1,0 +1,32 @@
+{
+    "regions": [
+        {
+            "name": "region1",
+            "x": 0, "y": 0, "w":-1, "h":-1, 
+            "imageLoc": "./images/one.png"
+        },
+        {
+            "name": "region2",
+            "x": 60, "y": 10, "w":-1, "h":-1, 
+            "imageLoc": "./images/two.png"
+        },
+        {
+            "name": "region3",
+            "x": 120, "y": 20, "w":-1, "h":-1, 
+            "imageLoc": "./images/three.png"
+        }
+
+    ], 
+    "states":[
+        {
+            "name" : "only_state",
+            "transitions" : [
+                {
+                    "onEvent" : {"evtType" : "any", "region" : "*"},
+                    "target" : "only_state",
+                    "actions" : [{"act": "print_event", "param": "===>>"}]
+                }
+            ]
+        }
+    ]
+}
